@@ -1,0 +1,13 @@
+footer {
+  padding: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  .footerCol {
+    width: 25%;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

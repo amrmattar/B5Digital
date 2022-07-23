@@ -1,0 +1,154 @@
+.searchContent {
+  display: flex;
+  height: 100%;
+  .headLogo {
+    width: 30%;
+    line-height: 100px;
+  }
+  .search {
+    display: flex;
+    width: 40%;
+  }
+  .userOrders {
+    width: 30%;
+    text-align: right;
+    position: relative;
+    img {
+      padding: 38px 0px;
+      margin-left: 35px;
+    }
+    .orderCounter {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: 14px;
+      top: 52px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      color: #fff;
+      border-radius: 50%;
+      background: #e6704b;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      line-height: 18px;
+    }
+  }
+}
+
+.dropdown {
+  background-color: #f9f9f9;
+  border-radius: 10px 0px 0px 10px;
+}
+
+input {
+  background-color: #f9f9f9;
+  border-radius: 0px 10px 10px 0px;
+}
+.search_box {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  padding: 30px 10px;
+}
+
+.search_box .dropdown {
+  width: 250px;
+  height: 40px;
+  position: relative;
+  border-top: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  border-left: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+
+.search_box .dropdown .default_option {
+  padding: 9px 15px;
+  font-size: 14px;
+}
+
+.search_box .dropdown ul {
+  z-index: 100;
+  position: absolute;
+  top: 25px;
+  left: -2px;
+  background: #fff;
+  list-style-type: none;
+  width: 150px;
+  border-radius: 5px;
+  padding: 20px;
+  display: none;
+  box-shadow: 8px 8px 6px -10px grey;
+}
+
+.search_box .dropdown ul.active {
+  display: block;
+}
+
+.search_box .dropdown ul li {
+  padding-bottom: 20px;
+}
+
+.search_box .dropdown ul li:last-child {
+  padding-bottom: 0;
+}
+
+.search_box .dropdown ul li:hover {
+  color: #6f768d;
+}
+
+.search_box .dropdown img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 8px solid;
+  border-color: transparent;
+}
+
+.search_box .search_field {
+  width: 90%;
+  height: 100%;
+  position: relative;
+}
+
+.search_box .search_field .input {
+  width: 100%;
+  height: 38px;
+  border: 0px;
+  font-size: 16px;
+  padding-left: 20px;
+  color: #6f768d;
+  border-top: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.search_box .search_field img {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  font-size: 22px;
+  color: #5078ef;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #9fa3b1;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #9fa3b1;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #9fa3b1;
+}
+
+input:focus {
+  outline: none;
+}

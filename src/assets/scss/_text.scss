@@ -1,0 +1,78 @@
+@import "varibiles";
+
+.green {
+  color: $greenTXT;
+}
+.dark {
+  color: $dark;
+}
+
+.text12 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.text15 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.text15Normal {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.text18 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.text14Lined {
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  &:hover {
+    color: $darkGreenTXT;
+  }
+}
+.text14 {
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 8px 0;
+  &:hover {
+    color: $darkGreenTXT;
+  }
+}
+
+.text18 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.hashed {
+  text-decoration-line: line-through;
+  color: #a9a9a9;
+}

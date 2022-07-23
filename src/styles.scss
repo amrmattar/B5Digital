@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/scss/index.scss";
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: content-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

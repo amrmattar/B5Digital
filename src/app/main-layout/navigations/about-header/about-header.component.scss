@@ -1,0 +1,21 @@
+.aboutHeader {
+  display: flex;
+  height: 100%;
+  .left {
+    width: 50%;
+    height: 100%;
+    flex: 1;
+    span {
+      margin-right: 33px;
+      line-height: 48px;
+    }
+  }
+  .right {
+    width: 50%;
+    text-align: end;
+    span {
+      margin-left: 33px;
+      line-height: 48px;
+    }
+  }
+}

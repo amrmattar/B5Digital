@@ -1,0 +1,36 @@
+<div class="searchContent">
+  <div class="headLogo">
+    <img src="assets/img/Freshnesecom.png" alt="Freshnesecom" srcset="" />
+  </div>
+  <div class="search">
+    <div class="search_box">
+      <div class="dropdown">
+        <div
+          class="default_option text15"
+          (click)="dropDownFlag = !dropDownFlag"
+        >
+          {{ catagory }}
+        </div>
+        <img src="../../../../assets/img/Vector.png" alt="" srcset="" />
+        <ul [ngClass]="{ active: dropDownFlag }">
+          <li (click)="toggleDropDown('All categories')">All categories</li>
+          <li (click)="toggleDropDown('Recent')">Recent</li>
+          <li (click)="toggleDropDown('Popular')">Popular</li>
+        </ul>
+      </div>
+      <div class="search_field">
+        <input type="text" class="input" placeholder="Search" />
+        <img src="assets/img/ic-actions-search.png" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+  <div class="userOrders">
+    <img src="../../../../assets/img/ic-actions-user.png" alt="" srcset="" />
+    <img
+      src="../../../../assets/img/ic-ecommerce-basket.png"
+      alt=""
+      srcset=""
+    />
+    <span class="orderCounter">4</span>
+  </div>
+</div>

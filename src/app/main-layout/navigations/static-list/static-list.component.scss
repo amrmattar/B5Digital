@@ -1,0 +1,26 @@
+.static-list {
+  height: 100%;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    li {
+      float: left;
+      a {
+        display: block;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        img {
+          position: relative;
+          top: -2px;
+        }
+        &:hover {
+          background-color: #eaeaea;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
