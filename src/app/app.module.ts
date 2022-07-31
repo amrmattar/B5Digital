@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { SideMenuComponent } from './main-layout/side-menu/side-menu.component';
 import { NavigationsComponent } from './main-layout/navigations/navigations.component';
 import { FooterComponent } from './main-layout/footer/footer.component';
-import { ProductsComponent } from './products/products.component';
-import { SingleProductComponent } from './shared/components/single-product/single-product.component';
 import { AboutHeaderComponent } from './main-layout/navigations/about-header/about-header.component';
 import { SearchAndOrderComponent } from './main-layout/navigations/search-and-order/search-and-order.component';
 import { StaticListComponent } from './main-layout/navigations/static-list/static-list.component';
+import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { TruncatePipe } from './product-shell/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,17 @@ import { StaticListComponent } from './main-layout/navigations/static-list/stati
     SideMenuComponent,
     NavigationsComponent,
     FooterComponent,
-    ProductsComponent,
-    SingleProductComponent,
     AboutHeaderComponent,
     SearchAndOrderComponent,
     StaticListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,27 @@
+<!-- <div class="productsList" *ngIf="products?.length">
+<div class="productsList">
+  <p (click)="checkChanged()">click</p>
+
+  <app-single-product *ngFor="let product of products"></app-single-product>
+  <div class="card-body">
+    <div class="list-group">
+      <button
+        class="list-group-item list-group-item-action rounded-0"
+        *ngFor="let product of products"
+        (click)="productSelected(product)"
+      >
+        {{ product.title }}
+        <ng-container *ngIf="displayCode$ | async">
+          ({{ product.productCode }})
+        </ng-container>
+      </button>
+    </div>
+  </div>
+</div>-->
+
+<div class="productsList">
+  <app-single-product
+    *ngFor="let product of products"
+    [product]="product"
+  ></app-single-product>
+</div>
