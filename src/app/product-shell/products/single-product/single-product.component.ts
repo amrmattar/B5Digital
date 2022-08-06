@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProductService } from '../../product.service';
 
 @Component({
   selector: 'app-single-product',
@@ -7,7 +8,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SingleProductComponent implements OnInit {
   @Input() product: any;
-  constructor() {}
+  paymentFlag: boolean;
+
+  constructor(private service: ProductService) {}
 
   ngOnInit(): void {}
+
+  Payment(payStatus) {
+    if (payStatus == 'add') {
+      this.paymentFlag = true;
+    } else {
+      this.paymentFlag = false;
+    }
+    this.service.cart(payStatus);
+  }
 }

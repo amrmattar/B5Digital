@@ -3,6 +3,9 @@
   flex-wrap: wrap;
   width: 100%;
   margin: 0;
+  max-height: 600px;
+  overflow: auto;
+  overflow-x: hidden;
   app-single-product {
     display: block;
     min-width: 25%;

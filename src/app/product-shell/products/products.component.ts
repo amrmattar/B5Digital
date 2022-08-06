@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { Product } from '../product';
@@ -18,7 +18,9 @@ export class ProductsComponent implements OnInit {
   products: Product[];
   errorMessage: string;
   products$: Observable<Product[]>;
-
+  defaultNum: number = 10;
+  @ViewChild('dialogContentForScroll') dialogContent: ElementRef;
+  scrollPosition: number;
   constructor(
     private store: Store<any>,
     private productService: ProductService
@@ -36,9 +38,8 @@ export class ProductsComponent implements OnInit {
     //   console.log(this.products$.subscribe((res) => console.log(res)));
     // }, 1000);
 
-    this.productService.getproducts().subscribe((res) => {
+    this.productService.getproducts(this.defaultNum).subscribe((res) => {
       this.products = res.products;
-      console.log(this.products);
     });
     // this.productService.getProducts().subscribe({
     //   next: (products: Product[]) => (this.products = products),
@@ -52,6 +53,19 @@ export class ProductsComponent implements OnInit {
     // });
   }
 
+  ngAfterViewInit(): void {
+    let dialogElement = this.dialogContent.nativeElement as HTMLElement;
+    dialogElement.onscroll = () => {
+      if (dialogElement.scrollTop > 380 && dialogElement.scrollTop < 500) {
+        this.defaultNum = 20;
+        this.ngOnInit();
+      } else if (dialogElement.scrollTop > 1100) {
+        this.defaultNum = 30;
+        this.ngOnInit();
+      }
+      this.scrollPosition = dialogElement.scrollTop;
+    };
+  }
   checkChanged(): void {
     this.store.dispatch({ type: '[Product] Toggle Product Code' });
   }

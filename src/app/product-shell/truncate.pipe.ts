@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'Amr',
 })
 export class TruncatePipe implements PipeTransform {
-  transform(text: any, length: number = 20, suffix: string = '...'): string {
+  transform(text: any, length: number = 10, suffix: string = '...'): string {
     /* check type of text */
     if (
       (typeof text === 'string' || text instanceof String) &&

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/product-shell/product.service';
 
 @Component({
   selector: 'app-search-and-order',
@@ -9,7 +10,7 @@ export class SearchAndOrderComponent implements OnInit {
   dropDownFlag: boolean;
   catagory: string = 'All Categories';
 
-  constructor() {}
+  constructor(public service: ProductService) {}
 
   ngOnInit(): void {}
 

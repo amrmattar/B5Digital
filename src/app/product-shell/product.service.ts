@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { Product } from './product';
 import { environment } from 'src/environments/environment';
 import { take } from 'rxjs/operators';
-import { HttpService } from '../services/http/http.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -11,23 +10,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
   baseUrl: string = 'https://dummyjson.com';
-  private productsUrl = 'api/products';
-  private products: Product[];
-
-  // private selectedProductSource = new BehaviorSubject<Product | null>(null);
-  // selectedProductChanges$ = this.selectedProductSource.asObservable();
+  orders: number = 0;
 
   constructor(private http: HttpClient) {}
 
-  // changeSelectedProduct(selectedProduct: Product | null): void {
-  //   this.selectedProductSource.next(selectedProduct);
-  // }
-
-  getproducts(): Observable<any> {
-    return this.http.get(this.baseUrl + environment.API.Products).pipe(take(1));
+  cart(updatedData) {
+    if (updatedData == 'add') {
+      this.orders++;
+    } else {
+      this.orders--;
+    }
   }
 
-  // getproducts(): Observable<any> {
-  //   return this.http.get(environment.API.Products);
-  // }
+  getproducts(prductsNum): Observable<any> {
+    return this.http
+      .get(this.baseUrl + environment.API.Products, {
+        params: { limit: prductsNum },
+      })
+      .pipe(take(1));
+  }
 }
